@@ -1,0 +1,35 @@
+
+function bracket_match(bracket_string) {
+    let balance = 0;
+    let countToAdd = 0;
+
+    for (let i = 0; i < bracket_string.length; i++) {
+        const char = bracket_string[i];
+
+        if (char === '(') {
+            balance++;
+        } else if (char === ')') {
+            if (balance > 0) {
+                balance--;
+            } else {
+                countToAdd++;
+            }
+        }
+    }
+
+    return countToAdd + balance;
+}
+
+// Test cases
+Case 01
+console.log(bracket_match('(()())')); // Expected result: 0
+Case 02
+console.log(bracket_match('((())'));  // Expected result: 1
+Case 03
+console.log(bracket_match('())'));    // Expected result: 1
+
+This function works keeping track of the unmatched opening brackets.
+countToAdd counts the number of additional brackets needed to balance the string.
+For every opening bracket (balance is incremented, for every closing bracket), if there is an unmatched opening bracket (i.e., balance > 0), it decrements balance; otherwise, it increments countToAdd.
+
+The function returns the sum of balance (unmatched opening brackets) and countToAdd (required additional closing brackets), finally we print in the console the result of the function. 
