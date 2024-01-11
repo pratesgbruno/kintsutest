@@ -2,4 +2,6 @@ Seja bem vinda ALINE OKITA!
 
 Vamos conversar? 
  https://linktr.ee/brunogenovaprates
-https://www.linkedin.com/in/brunogprates/
+
+Linkedin Bruno Prates
+ https://www.linkedin.com/in/brunogprates/
