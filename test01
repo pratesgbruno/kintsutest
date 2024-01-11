@@ -1,0 +1,21 @@
+
+function encontrarMinMax(arr) {
+    arr.sort((a, b) => a - b);
+    const minSum = arr.slice(0, 4).reduce((acc, val) => acc + val, 0);
+    const maxSum = arr.slice(-4).reduce((acc, val) => acc + val, 0);
+    return [minSum, maxSum];
+}
+
+// Teste com o exemplo fornecido
+const arr = [3, 5, 1, 7, 9];
+const [minSum, maxSum] = encontrarMinMax(arr);
+console.log(minSum, maxSum);
+
+//Resultado:
+16 e 24
+
+
+//Código onde a função encontrarMinMax recebe um array de números inteiros. 
+Primeiro o array é ordenado em ordem crescente, em seguida a função slice é usada para obter os quatros menores e os quatro maiores valores, já a função reduce soma esses valores para obter as somas mínimas e máximas. finalmente esses valores são retornados para o array, a função então imprime os valores 16 e 24. 
+
+_____________
