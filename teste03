@@ -1,0 +1,28 @@
+
+
+function can_reach_end(nums) {
+    let maxReach = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (i > maxReach) {
+            return false;
+        }
+        maxReach = Math.max(maxReach, i + nums[i]);
+        if (maxReach >= nums.length - 1) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// test case
+console.log("Test [1, 2, 3]: " + can_reach_end([1, 2, 3]));            // Expected result: true
+console.log("Test [5, 0, 0, 0]: " +can_reach_end([5, 0, 0, 0]));        // Expected result: true
+console.log("Test [0]: " +can_reach_end([0]));                    // Expected result: true
+console.log("Test [0, 2, 4]: " +can_reach_end([0, 2, 4]));            // Expected result: false
+console.log("Test [1, 2, 0, 0, 1]: " +can_reach_end([1, 2, 0, 0, 1]));    // Expected result: false
+
+The can_reach_end function in Node.js evaluates if it's possible to reach the end of an array where each element indicates 
+the maximum jump distance from that point. It iterates through the array, updating the furthest reachable position.
+If it encounters a position that cannot be reached or if the furthest reachable position surpasses the array's end, 
+it returns false or true respectively, indicating whether the end is accessible based on the jump distances.
+
